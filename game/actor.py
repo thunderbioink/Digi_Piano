@@ -1,11 +1,10 @@
 class Actor():
-    #Base class , no inheritance
+    #Base class , no inheritance: 
     """
     This class creates parameters for the key objects in __main__:
     Each keynote will have an image, and an x and y position.
-    
+
     Avoid doing unnecessary copy/paste for the image path for each key.
-    
     """ 
     def __init__(self, image, x,y):
     

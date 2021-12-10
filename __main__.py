@@ -1,4 +1,4 @@
-# abstraction and polymorphism can work together + headers. 
+# Abstraction and Polymorphism can work together + headers.
 import pygame
 from game.keys import Keys
 from game.output import Output

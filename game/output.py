@@ -1,4 +1,3 @@
-
 class Output():
     """
     User will get object displayed on screen.
