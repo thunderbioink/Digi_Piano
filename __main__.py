@@ -17,19 +17,19 @@ black_key = pygame.image.load('game\images\sharp_key.png')
 output_service = Output(screen)
 # While loop for the game to initialize: True until False == Quit:
 running = True
-# While loop opens
+# While loop opens:
 while running:
-    # Screen Fill - black, underneath background
+    #Screen Fill - Black, Underneath Background:
     screen.fill((0,0,0))
-    # Background Image
+    # Background Image:
     screen.blit(background, (750,450))
     
     
-    #Actor classs- Keys class inherits from Actor
-    # pygame.mixer.music.load('C:\Users\Alma\Documents\F21\CSE 210\Digi_Piano\game\piano_sounds\mp3\C3 61 key Piano.mp3')
-    # pygame.mixer.music.play(-1)
+    #Actor Classs- Keys Class Inherits from Actor:
+    pygame.mixer.music.load('C:\Users\Alma\Documents\F21\CSE 210\Digi_Piano\game\piano_sounds\mp3\C3 61 key Piano.mp3')
+    # pygame.mixer.music.play(-1):
     
-    #Draw in output - an abstraction - Key inherits from Actor
+    #Draw in output - an abstraction - Key inherits from Actor:
     c3 = Keys(white_key, 0,0)
     C3 = output_service.draw(c3)
     db3 = Keys(black_key, 50,-500)
@@ -59,6 +59,7 @@ while running:
     # for click in C3:
     #     if click == C3:
     #         # PlaySound(sound, flags)
+    
     width = screen.get_width()
     height = screen.get_height()
     # bulletSound = pygame.mixer.Sound("C:\Users\Alma\Documents\F21\CSE 210\Digi_Piano\game\piano_sounds\mp3\A3 61 key Piano.mp3")
@@ -70,9 +71,8 @@ while running:
     
         
         if event.type == pygame.MOUSEBUTTONDOWN:
-             # The variable mouse as a tuple:
+            #The variable mouse as a tuple:
             mouse = pygame.mouse.get_pos()
-            
             
             # BLACK KEYS - clickable areas:
             
