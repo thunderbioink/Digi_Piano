@@ -1,11 +1,12 @@
 # Abstraction and Polymorphism can work together + headers.
 import pygame
+# import os
 from game.keys import Keys
 from game.output import Output
-
+from pygame import mixer
 # Initialize pygame
 pygame.init()
-
+mixer.init()
 # Game screen
 screen = pygame.display.set_mode((675,450))
 
@@ -25,10 +26,21 @@ while running:
     screen.blit(background, (750,450))
     
     
-    #Actor Classs- Keys Class Inherits from Actor:
-    pygame.mixer.music.load('C:\Users\Alma\Documents\F21\CSE 210\Digi_Piano\game\piano_sounds\mp3\C3 61 key Piano.mp3')
-    # pygame.mixer.music.play(-1):
     
+    sound_C3 = pygame.mixer.Sound('game\piano_sounds\C3 61 key Piano.wav')
+    sound_Db3 = pygame.mixer.Sound('game\piano_sounds\C3 Sharp & D3 Flat.wav')
+    sound_D3 = pygame.mixer.Sound('game\piano_sounds\D3 61 key Piano.wav')
+    sound_Eb3 = pygame.mixer.Sound('game\piano_sounds\D3 Sharp & E3 Flat.wav')
+    sound_E3 = pygame.mixer.Sound('game\piano_sounds\E3 61 key Piano.wav')
+    sound_F3 = pygame.mixer.Sound('game\piano_sounds\F3 61 key Piano.wav')
+    sound_Gb3 = pygame.mixer.Sound('game\piano_sounds\F3 Sharp & G3 Flat.wav')
+    sound_G3 = pygame.mixer.Sound('game\piano_sounds\G3 61 key Piano.wav')
+    sound_Ab3 = pygame.mixer.Sound('game\piano_sounds\G3 Sharp & A3 Flat.wav')
+    sound_A3 = pygame.mixer.Sound('game\piano_sounds\A3 61 key Piano.wav')
+    sound_Bb3 = pygame.mixer.Sound('game\piano_sounds\A3 Sharp & B3 Flat.wav')
+    sound_B3 = pygame.mixer.Sound('game\piano_sounds\B3 61 key Piano.wav')
+   
+    #Actor Classs- Keys Class Inherits from Actor:
     #Draw in output - an abstraction - Key inherits from Actor:
     c3 = Keys(white_key, 0,0)
     C3 = output_service.draw(c3)
@@ -56,15 +68,9 @@ while running:
     B3 = output_service.draw(b3)
 
     
-    # for click in C3:
-    #     if click == C3:
-    #         # PlaySound(sound, flags)
-    
     width = screen.get_width()
     height = screen.get_height()
-    # bulletSound = pygame.mixer.Sound("C:\Users\Alma\Documents\F21\CSE 210\Digi_Piano\game\piano_sounds\mp3\A3 61 key Piano.mp3")
-    # hitSound = pygame.mixer.Sound("C:\Users\Alma\Documents\F21\CSE 210\Digi_Piano\game\piano_sounds\mp3\A3 61 key Piano.mp3")          
-    
+
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
@@ -77,36 +83,43 @@ while running:
             # BLACK KEYS - clickable areas:
             
             if 50 <= mouse[0] <= 100 and 0 <= mouse[1] <= 250:
+                sound_Db3.play()
                 print("db3")
-                # bulletSound = pygame.mixer.Sound("bullet.wav")
-                # hitSound = pygame.mixer.Sound("hit.wav")
             elif 150 <= mouse[0] <= 200 and 0 <= mouse[1] <= 250:
+                sound_Eb3.play()
                 print("eb3")
             elif 350 <= mouse[0] <= 400 and 0 <= mouse[1] <= 250:
+                sound_Gb3.play()
                 print("gb3") 
             elif 450 <= mouse[0] <= 500 and 0 <= mouse[1] <= 250:
+                sound_Ab3.play()
                 print("ab3")
             elif 550 <= mouse[0] <= 600 and 0 <= mouse[1] <= 250:
-                print("ab3")
+                sound_Bb3.play()
+                print("bb3")
             #WHITE KEYS - clickable areas:
             elif 0 <= mouse[0] <= 100 and 0 <= mouse[1] <= 1198:
+                sound_C3.play()
                 print("C3") 
             elif 100 <= mouse[0] <= 200 and 0 <= mouse[1] <= 1198:
+                sound_D3.play()
                 print("D3")
             elif 200 <= mouse[0] <= 300 and 0 <= mouse[1] <= 1198:
+                sound_E3.play()
                 print("E3")
             elif 300 <= mouse[0] <= 400 and 0 <= mouse[1] <= 1198:
+                sound_F3.play()
                 print("F3")
             elif 400 <= mouse[0] <= 500 and 0 <= mouse[1] <= 1198:
+                sound_G3.play()
                 print("G3")
             elif 500 <= mouse[0] <= 600 and 0 <= mouse[1] <= 1198:
+                sound_A3.play()
                 print("A3")
-                # bulletSound.play()
             elif 600 <= mouse[0] <= 700 and 0 <= mouse[1] <= 1198:
+                sound_B3.play()
                 print("B3")
-            
-            
-    
+                
     pygame.display.update()
 
 
