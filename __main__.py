@@ -1,6 +1,27 @@
-# Abstraction and Polymorphism can work together + headers.
+"""
+- Description:
+   
+    In this file all classes and libraries are imported, to run the game smoothly:
+    pygame being our superstar. We were able to distribute a called method from pygame
+    into the Output class, known as blit. This method is the most important to see each
+    keynote actor.
+    
+    Our sounds are their own separate set of actors, that inherit the x,y positions from
+    the keynote actors, in the lower FOR EVENT loop and play each time a specific keynote is
+    clicked on a specfic set of defined pixels.
+    
+- OOP Principles Used:
+   Polymorphism and Inheritance.
+
+- Reasoning:
+    This file uses Polymorphism and Inheritance because it reuses the parameters and attributes logic in all
+    our predefined classes and libraries. In this file, polymorphism takes shape in the FOR EVENT loop, when
+    a sound is called, it is only able to play if it takes the same pixel values assigned to each given Keynote
+    actor. Eeach sound actor can only play if set under each clickable asigned pixel. You don't need the argument
+    to play a sound in that loop repeated over again. You only need it once per each keynote. 
+"""
+# Abstraction and Polymorphism can work together.
 import pygame
-# import os
 from game.keys import Keys
 from game.output import Output
 from pygame import mixer
@@ -40,7 +61,7 @@ while running:
     sound_Bb3 = pygame.mixer.Sound('game\piano_sounds\A3 Sharp & B3 Flat.wav')
     sound_B3 = pygame.mixer.Sound('game\piano_sounds\B3 61 key Piano.wav')
    
-    #Actor Classs- Keys Class Inherits from Actor:
+
     #Draw in output - an abstraction - Key inherits from Actor:
     c3 = Keys(white_key, 0,0)
     C3 = output_service.draw(c3)
@@ -66,7 +87,6 @@ while running:
     Bb3 = output_service.draw(bb3)
     b3 = Keys(white_key, 600,0)
     B3 = output_service.draw(b3)
-
     
     width = screen.get_width()
     height = screen.get_height()
@@ -77,7 +97,7 @@ while running:
     
         
         if event.type == pygame.MOUSEBUTTONDOWN:
-            #The variable mouse as a tuple:
+            #The variable mouse is a tuple:
             mouse = pygame.mouse.get_pos()
             
             # BLACK KEYS - clickable areas:
